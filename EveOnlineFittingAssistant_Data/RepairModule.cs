@@ -8,6 +8,6 @@ namespace EveOnlineFittingAssistant_Data
 {
     public class RepairModule : ActiveModule
     {
-
+        RepairModule
     }
 }
