@@ -21,7 +21,6 @@ namespace EveOnlineFittingAssistant_Data
         public ActiveModule(SlotType slot, double power, double cpu, double cycle) : base(slot, power, cpu)
         {
             CycleTime = cycle;
-
         }
         public ActiveModule(SlotType slot, double power, double cpu, double cycle, double capusage) : base(slot, power, cpu)
         {
