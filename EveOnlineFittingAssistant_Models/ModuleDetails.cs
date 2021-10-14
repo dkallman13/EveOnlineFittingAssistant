@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace EveOnlineFittingAssistant_Models
 {
-    public class WeaponAdd
+    public class ModuleDetails
     {
+        public int ID { get; set; }
         public SlotType Slot { get; set; }
         public double CPU { get; set; }
         public double Powergrid { get; set; }
-        public double CycleTime { get; set; }
-        public double CapacitorUsage { get; set; }
-        public WeaponType TypeOfWeapon { get; set; }
-        public double DamageMultiplier { get; set; }
+        public bool IsActiveModule { get; set; }
+        public bool IsWeapon { get; set; }
+        public bool IsRepairModule { get; set; }
     }
 }
