@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActiveModule.cs" />
+    <Compile Include="Fit.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
