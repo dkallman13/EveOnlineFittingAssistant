@@ -9,6 +9,7 @@ namespace EveOnlineFittingAssistant_Models
 {
     public class WeaponModel
     {
+        public int Id { get; set; }
         public SlotType Slot { get; set; }
         public double CPU { get; set; }
         public double Powergrid { get; set; }

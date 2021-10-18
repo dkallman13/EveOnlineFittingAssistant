@@ -92,7 +92,68 @@ namespace EveOnlineFittingAssistant_Services
                 };
             }
         }
+        public bool UpdateModule(ModuleModel model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Modules.Single(e => e.Id == model.Id);
 
+                entity.Powergrid = model.Powergrid;
+                entity.Slot = model.Slot;
+                entity.CPU = model.CPU;
 
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool UpdateActiveModule(ActiveModuleModel model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Modules.Single(e => e.Id == model.Id);
+
+                entity.Powergrid = model.Powergrid;
+                entity.Slot = model.Slot;
+                entity.CPU = model.CPU;
+                entity.CycleTime = model.CycleTime;
+                entity.CapacitorUsage = model.CapacitorUsage;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        public bool UpdateRepairModule(RepairModuleModel model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Modules.Single(e => e.Id == model.Id);
+
+                entity.Powergrid = model.Powergrid;
+                entity.Slot = model.Slot;
+                entity.CPU = model.CPU;
+                entity.CycleTime = model.CycleTime;
+                entity.CapacitorUsage = model.CapacitorUsage;
+                entity.RepairAmount = model.RepairAmount;
+                entity.RepairType = model.RepairType;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        public bool UpdateWeapon(WeaponModel model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Modules.Single(e => e.Id == model.Id);
+
+                entity.Powergrid = model.Powergrid;
+                entity.Slot = model.Slot;
+                entity.CPU = model.CPU;
+                entity.CycleTime = model.CycleTime;
+                entity.CapacitorUsage = model.CapacitorUsage;
+                entity.TypeOfWeapon = model.TypeOfWeapon;
+                entity.DamageMultiplier = model.DamageMultiplier;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

@@ -17,6 +17,16 @@ namespace EveOnlineFittingAssistant_Data
         public double Powergrid { get; set; }
         [Required]
         public double CPU { get; set; }
+
+        public double? CycleTime;
+        public double? CapacitorUsage;
+
+        public WeaponType? TypeOfWeapon;
+        public double? DamageMultiplier;
+
+        public double? RepairAmount;
+        public RepairType? RepairType;
+
         public bool IsWeapon = false;
         public bool IsActiveModule = false;
         public bool IsRepairModule = false;
