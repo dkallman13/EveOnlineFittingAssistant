@@ -62,5 +62,7 @@ namespace EveOnlineFittingAssistant_Data
                 HasKey(iur => iur.UserId);
             }
         }
+
+        public System.Data.Entity.DbSet<EveOnlineFittingAssistant_Models.ModuleModel> ModuleModels { get; set; }
     }
 }
