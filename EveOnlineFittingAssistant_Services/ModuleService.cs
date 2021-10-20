@@ -61,13 +61,10 @@ namespace EveOnlineFittingAssistant_Services
                             ID = e.Id,
                             Slot = e.Slot,
                             CPU = e.CPU,
-                            Powergrid = e.Powergrid,
-                            IsActiveModule = e.IsActiveModule,
-                            IsRepairModule = e.IsRepairModule,
-                            IsWeapon = e.IsWeapon
+                            Powergrid = e.Powergrid
                         }
                     );
-                return query.ToArray();
+                return query.ToList();
             }
         }
         public ModuleDetails GetModuleById(int id)
@@ -85,10 +82,7 @@ namespace EveOnlineFittingAssistant_Services
                     ID = query.Id,
                     Slot = query.Slot,
                     CPU = query.CPU,
-                    Powergrid = query.Powergrid,
-                    IsActiveModule = query.IsActiveModule,
-                    IsRepairModule = query.IsRepairModule,
-                    IsWeapon = query.IsWeapon
+                    Powergrid = query.Powergrid
                 };
             }
         }

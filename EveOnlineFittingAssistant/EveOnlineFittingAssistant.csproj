@@ -175,7 +175,15 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Module\Create.cshtml" />
+    <Content Include="Views\Module\CreateActive.cshtml" />
     <Content Include="Views\Module\Index.cshtml" />
+    <Content Include="Views\Module\CreateWeapon.cshtml" />
+    <Content Include="Views\Module\CreateRepairModule.cshtml" />
+    <Content Include="Views\Module\UpdateModule.cshtml" />
+    <Content Include="Views\Module\UpdateRepairModule.cshtml" />
+    <Content Include="Views\Module\UpdateActiveModule.cshtml" />
+    <Content Include="Views\Module\UpdateWeapon.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -16,6 +16,7 @@ namespace EveOnlineFittingAssistant_Data
         public double DamageMultiplier { get; set; }
 
         public bool IsWeapon = true;
+        public Weapon() { }
         public Weapon(SlotType slot, double power, double cpu, double cycle, double? capusage, WeaponType type, double mult) : base(slot, power, cpu, cycle, capusage)
         {
             TypeOfWeapon = type;
