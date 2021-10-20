@@ -87,12 +87,11 @@ namespace EveOnlineFittingAssistant_Services
             }
         }
 
-        public bool UpdateModule(ModuleModel model)
+        public bool UpdateModule(int id, ModuleModel model)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Modules.Single(e => e.Id == model.Id);
-
+                var entity = ctx.Modules.Single(e => e.Id == id);
                 entity.Powergrid = model.Powergrid;
                 entity.Slot = model.Slot;
                 entity.CPU = model.CPU;
@@ -101,12 +100,12 @@ namespace EveOnlineFittingAssistant_Services
             }
         }
 
-        public bool UpdateActiveModule(ActiveModuleModel model)
+        public bool UpdateActiveModule(int id, ActiveModuleModel model)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Modules.Single(e => e.Id == model.Id);
-
+                var entity = ctx.Modules.Single(e => e.Id == id);
+                model.Id = id;
                 entity.Powergrid = model.Powergrid;
                 entity.Slot = model.Slot;
                 entity.CPU = model.CPU;
@@ -116,12 +115,12 @@ namespace EveOnlineFittingAssistant_Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public bool UpdateRepairModule(RepairModuleModel model)
+        public bool UpdateRepairModule(int id, RepairModuleModel model)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Modules.Single(e => e.Id == model.Id);
-
+                var entity = ctx.Modules.Single(e => e.Id == id);
+                model.Id = id;
                 entity.Powergrid = model.Powergrid;
                 entity.Slot = model.Slot;
                 entity.CPU = model.CPU;
@@ -133,12 +132,12 @@ namespace EveOnlineFittingAssistant_Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public bool UpdateWeapon(WeaponModel model)
+        public bool UpdateWeapon(int id, WeaponModel model)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Modules.Single(e => e.Id == model.Id);
-
+                var entity = ctx.Modules.Single(e => e.Id == id);
+                model.Id = id;
                 entity.Powergrid = model.Powergrid;
                 entity.Slot = model.Slot;
                 entity.CPU = model.CPU;

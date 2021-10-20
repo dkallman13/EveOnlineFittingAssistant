@@ -94,16 +94,13 @@ namespace EveOnlineFittingAssistant.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult UpdateModule(int id, ModuleModel model) 
+        
+        public ActionResult UpdateModule(ModuleModel model) 
         {
+            int id = int.Parse(RouteData.Values["id"].ToString());
             if (!ModelState.IsValid) return View(model);
-            if(model.Id != id)
-            {
-                ModelState.AddModelError("", "Id Mismatch");
-                return View(model);
-            }
             var service = CreateModuleService();
-            if (service.UpdateModule(model))
+            if (service.UpdateModule(id, model))
             {
                 TempData["SaveResult"] = "the module was updated";
                 return RedirectToAction("index");
@@ -116,16 +113,12 @@ namespace EveOnlineFittingAssistant.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult UpdateRepairModule(int id, RepairModuleModel model)
+        public ActionResult UpdateRepairModule(RepairModuleModel model)
         {
+            int id = int.Parse(RouteData.Values["id"].ToString());
             if (!ModelState.IsValid) return View(model);
-            if (model.Id != id)
-            {
-                ModelState.AddModelError("", "Id Mismatch");
-                return View(model);
-            }
             var service = CreateModuleService();
-            if (service.UpdateRepairModule(model))
+            if (service.UpdateRepairModule(id, model))
             {
                 TempData["SaveResult"] = "the module was updated";
                 return RedirectToAction("index");
@@ -138,16 +131,12 @@ namespace EveOnlineFittingAssistant.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult UpdateActiveModule(int id, ActiveModuleModel model)
+        public ActionResult UpdateActiveModule(ActiveModuleModel model)
         {
+            int id = int.Parse(RouteData.Values["id"].ToString());
             if (!ModelState.IsValid) return View(model);
-            if (model.Id != id)
-            {
-                ModelState.AddModelError("", "Id Mismatch");
-                return View(model);
-            }
             var service = CreateModuleService();
-            if (service.UpdateActiveModule(model))
+            if (service.UpdateActiveModule(id,model))
             {
                 TempData["SaveResult"] = "the module was updated";
                 return RedirectToAction("index");
@@ -160,16 +149,12 @@ namespace EveOnlineFittingAssistant.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult UpdateWeapon(int id, WeaponModel model)
+        public ActionResult UpdateWeapon(WeaponModel model)
         {
+            int id = int.Parse(RouteData.Values["id"].ToString());
             if (!ModelState.IsValid) return View(model);
-            if (model.Id != id)
-            {
-                ModelState.AddModelError("", "Id Mismatch");
-                return View(model);
-            }
             var service = CreateModuleService();
-            if (service.UpdateWeapon(model))
+            if (service.UpdateWeapon(id, model))
             {
                 TempData["SaveResult"] = "the weapon was updated";
                 return RedirectToAction("index");
