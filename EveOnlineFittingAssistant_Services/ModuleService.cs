@@ -92,6 +92,7 @@ namespace EveOnlineFittingAssistant_Services
                 };
             }
         }
+
         public bool UpdateModule(ModuleModel model)
         {
             using (var ctx = new ApplicationDbContext())
