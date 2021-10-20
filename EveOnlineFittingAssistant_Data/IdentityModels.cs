@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
@@ -20,6 +21,7 @@ namespace EveOnlineFittingAssistant_Data
             return userIdentity;
         }
     }
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
@@ -63,6 +65,14 @@ namespace EveOnlineFittingAssistant_Data
             }
         }
 
+        public System.Data.Entity.DbSet<EveOnlineFittingAssistant_Models.WeaponModel> WeaponModels { get; set; }
+
+        public System.Data.Entity.DbSet<EveOnlineFittingAssistant_Data.RepairModule> RepairModules { get; set; }
+
         public System.Data.Entity.DbSet<EveOnlineFittingAssistant_Models.ModuleModel> ModuleModels { get; set; }
+
+        public System.Data.Entity.DbSet<EveOnlineFittingAssistant_Models.RepairModuleModel> RepairModuleModels { get; set; }
+
+        public System.Data.Entity.DbSet<EveOnlineFittingAssistant_Models.ActiveModuleModel> ActiveModuleModels { get; set; }
     }
 }

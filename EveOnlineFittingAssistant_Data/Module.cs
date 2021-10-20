@@ -31,6 +31,7 @@ namespace EveOnlineFittingAssistant_Data
         public bool IsActiveModule = false;
         public bool IsRepairModule = false;
 
+        public Module() { }
         public Module(SlotType slot, double power, double cpu)
         {
             Slot = slot;

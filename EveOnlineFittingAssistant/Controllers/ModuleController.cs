@@ -88,5 +88,94 @@ namespace EveOnlineFittingAssistant.Controllers
             service.CreateRepairModule(model);
             return RedirectToAction("Index");
         }
+
+        public ActionResult UpdateModule()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult UpdateModule(int id, ModuleModel model) 
+        {
+            if (!ModelState.IsValid) return View(model);
+            if(model.Id != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+            var service = CreateModuleService();
+            if (service.UpdateModule(model))
+            {
+                TempData["SaveResult"] = "the module was updated";
+                return RedirectToAction("index");
+            }
+            ModelState.AddModelError("", "the module was not updated.");
+            return View(model);
+        }
+        public ActionResult UpdateRepairModule()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult UpdateRepairModule(int id, RepairModuleModel model)
+        {
+            if (!ModelState.IsValid) return View(model);
+            if (model.Id != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+            var service = CreateModuleService();
+            if (service.UpdateRepairModule(model))
+            {
+                TempData["SaveResult"] = "the module was updated";
+                return RedirectToAction("index");
+            }
+            ModelState.AddModelError("", "the module was not updated.");
+            return View(model);
+        }
+        public ActionResult UpdateActiveModule()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult UpdateActiveModule(int id, ActiveModuleModel model)
+        {
+            if (!ModelState.IsValid) return View(model);
+            if (model.Id != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+            var service = CreateModuleService();
+            if (service.UpdateActiveModule(model))
+            {
+                TempData["SaveResult"] = "the module was updated";
+                return RedirectToAction("index");
+            }
+            ModelState.AddModelError("", "the module was not updated.");
+            return View(model);
+        }
+        public ActionResult UpdateWeapon()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult UpdateWeapon(int id, WeaponModel model)
+        {
+            if (!ModelState.IsValid) return View(model);
+            if (model.Id != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+            var service = CreateModuleService();
+            if (service.UpdateWeapon(model))
+            {
+                TempData["SaveResult"] = "the weapon was updated";
+                return RedirectToAction("index");
+            }
+            ModelState.AddModelError("", "the weapon was not updated.");
+            return View(model);
+        }
     }
 }

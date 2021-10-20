@@ -18,7 +18,7 @@ namespace EveOnlineFittingAssistant_Data
 
         public double CapacitorUsage { get; set; }
 
-        
+        public ActiveModule() { }
         public ActiveModule(SlotType slot, double power, double cpu, double cycle, double? capusage) : base(slot, power, cpu)
         {
             CycleTime = cycle;

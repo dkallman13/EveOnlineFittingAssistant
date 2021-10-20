@@ -16,7 +16,7 @@ namespace EveOnlineFittingAssistant_Data
         public double RepairAmount { get; set; }
 
         public bool IsRepairModule = true;
-
+        public RepairModule() { }
         public RepairModule(SlotType slot, double power, double cpu, double cycle, double? capusage, RepairType type, double amount) : base(slot, power, cpu, cycle, capusage)
         {
             RepairType = type;

@@ -13,8 +13,6 @@ namespace EveOnlineFittingAssistant_Models
         public SlotType Slot { get; set; }
         public double CPU { get; set; }
         public double Powergrid { get; set; }
-        public bool IsActiveModule { get; set; }
-        public bool IsWeapon { get; set; }
-        public bool IsRepairModule { get; set; }
+        
     }
 }
