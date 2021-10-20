@@ -64,15 +64,5 @@ namespace EveOnlineFittingAssistant_Data
                 HasKey(iur => iur.UserId);
             }
         }
-
-        public System.Data.Entity.DbSet<EveOnlineFittingAssistant_Models.WeaponModel> WeaponModels { get; set; }
-
-        public System.Data.Entity.DbSet<EveOnlineFittingAssistant_Data.RepairModule> RepairModules { get; set; }
-
-        public System.Data.Entity.DbSet<EveOnlineFittingAssistant_Models.ModuleModel> ModuleModels { get; set; }
-
-        public System.Data.Entity.DbSet<EveOnlineFittingAssistant_Models.RepairModuleModel> RepairModuleModels { get; set; }
-
-        public System.Data.Entity.DbSet<EveOnlineFittingAssistant_Models.ActiveModuleModel> ActiveModuleModels { get; set; }
     }
 }
