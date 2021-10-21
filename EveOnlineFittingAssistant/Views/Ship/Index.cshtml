@@ -1,0 +1,85 @@
+﻿@model IEnumerable<EveOnlineFittingAssistant_Models.ShipModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LowSlotNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MidSlotNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HighSlotNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Powergrid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CPU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CapacitorCapacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CapacitorRechargeTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WeaponMounts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CargoSpace)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Speed)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LowSlotNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MidSlotNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HighSlotNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Powergrid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CPU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CapacitorCapacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CapacitorRechargeTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WeaponMounts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CargoSpace)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Speed)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Update", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

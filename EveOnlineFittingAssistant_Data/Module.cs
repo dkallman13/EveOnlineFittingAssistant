@@ -17,15 +17,28 @@ namespace EveOnlineFittingAssistant_Data
         public double Powergrid { get; set; }
         [Required]
         public double CPU { get; set; }
+        public string Name { get; set; }
+
+        public double? CycleTime;
+        public double? CapacitorUsage;
+
+        public WeaponType? TypeOfWeapon;
+        public double? DamageMultiplier;
+
+        public double? RepairAmount;
+        public RepairType? RepairType;
+
         public bool IsWeapon = false;
         public bool IsActiveModule = false;
         public bool IsRepairModule = false;
 
-        public Module(SlotType slot, double power, double cpu)
+        public Module() { }
+        public Module(SlotType slot, double power, double cpu, string name)
         {
             Slot = slot;
             Powergrid = power;
             CPU = cpu;
+            Name = name;
         }
 
     }

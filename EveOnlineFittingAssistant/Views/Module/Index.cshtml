@@ -1,0 +1,77 @@
+﻿@model IEnumerable<EveOnlineFittingAssistant_Models.ModuleDetails>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <div class="btn bg-success" style="display:inline; box-shadow: 15px 10px 5px teal; margin: 5px;">
+        @Html.ActionLink("Create New Passive Module", "Create")
+    </div>
+    <div class="btn bg-success" style="display: inline; box-shadow: 15px 10px 5px teal; margin: 5px;">
+        @Html.ActionLink("Create New Active Module", "CreateActive")
+    </div>
+    <div class="btn bg-success" style="display: inline; box-shadow: 15px 10px 5px teal; margin: 5px;">
+        @Html.ActionLink("Create New Repair Module", "CreateRepairModule")
+    </div>
+    <div class="btn bg-success" style="display: inline; box-shadow: 15px 10px 5px teal; margin: 5px;">
+        @Html.ActionLink("Create New Weapon", "CreateWeapon")
+    </div>
+</p>
+<table class="table" style="margin-top:30px">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Slot)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CPU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Powergrid)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Slot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CPU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Powergrid)
+            </td>
+            <td>
+                @if (item is EveOnlineFittingAssistant_Data.Weapon)
+                {
+                    @Html.ActionLink("Edit", "UpdateWeapon", new { id = item.ID })
+                }
+                else if (item is EveOnlineFittingAssistant_Data.RepairModule)
+                {
+
+                    @Html.ActionLink("Edit", "UpdateRepairModule", new { id = item.ID })
+                }
+                else if (item is EveOnlineFittingAssistant_Data.ActiveModule)
+                {
+                    @Html.ActionLink("Edit", "UpdateActiveModule", new { id = item.ID })
+                }
+                else
+                {
+                    @Html.ActionLink("Edit", "UpdateModule", new { id = item.ID })
+                }
+            </td>
+        </tr>
+    }
+
+</table>
