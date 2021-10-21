@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace EveOnlineFittingAssistant_Data
         [Key]
         public int Id { get; set; }
         [Required]
+        [ForeignKey(nameof(EveOnlineFittingAssistant_Data.Ship))]
         public int ShipId { get; set; }
         public List<int> HighModuleIds { get; set; }
         public List<int> MidModuleIds { get; set; }

@@ -12,7 +12,7 @@ namespace EveOnlineFittingAssistant_Services
     {
         public bool CreateModule(ModuleModel module)
         {
-            var entity = new Module(module.Slot, module.Powergrid, module.CPU);
+            var entity = new Module(module.Slot, module.Powergrid, module.CPU, module.Name);
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Modules.Add(entity);
@@ -21,7 +21,7 @@ namespace EveOnlineFittingAssistant_Services
         }
         public bool CreateActiveModule(ActiveModuleModel module)
         {
-            var entity = new ActiveModule(module.Slot, module.Powergrid, module.CPU, module.CycleTime, module?.CapacitorUsage);
+            var entity = new ActiveModule(module.Slot, module.Powergrid, module.CPU, module.Name, module.CycleTime, module?.CapacitorUsage);
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Modules.Add(entity);
@@ -30,7 +30,7 @@ namespace EveOnlineFittingAssistant_Services
         }
         public bool CreateRepairModule(RepairModuleModel module)
         {
-            var entity = new RepairModule(module.Slot, module.Powergrid, module.CPU, module.CycleTime, module?.CapacitorUsage, module.RepairType, module.RepairAmount);
+            var entity = new RepairModule(module.Slot, module.Powergrid, module.CPU, module.Name, module.CycleTime, module?.CapacitorUsage, module.RepairType, module.RepairAmount);
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Modules.Add(entity);
@@ -39,7 +39,7 @@ namespace EveOnlineFittingAssistant_Services
         }
         public bool CreateWeapon(WeaponModel weapon)
         {
-            var entity = new Weapon(weapon.Slot, weapon.Powergrid, weapon.CPU, weapon.CycleTime, weapon?.CapacitorUsage, weapon.TypeOfWeapon, weapon.DamageMultiplier);
+            var entity = new Weapon(weapon.Slot, weapon.Powergrid, weapon.CPU, weapon.Name, weapon.CycleTime, weapon?.CapacitorUsage, weapon.TypeOfWeapon, weapon.DamageMultiplier);
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Modules.Add(entity);
@@ -61,7 +61,8 @@ namespace EveOnlineFittingAssistant_Services
                             ID = e.Id,
                             Slot = e.Slot,
                             CPU = e.CPU,
-                            Powergrid = e.Powergrid
+                            Powergrid = e.Powergrid,
+                            Name = e.Name
                         }
                     );
                 return query.ToList();
@@ -82,6 +83,7 @@ namespace EveOnlineFittingAssistant_Services
                     ID = query.Id,
                     Slot = query.Slot,
                     CPU = query.CPU,
+                    Name = query.Name,
                     Powergrid = query.Powergrid
                 };
             }
@@ -92,6 +94,7 @@ namespace EveOnlineFittingAssistant_Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Modules.Single(e => e.Id == id);
+                entity.Name = model.Name;
                 entity.Powergrid = model.Powergrid;
                 entity.Slot = model.Slot;
                 entity.CPU = model.CPU;
@@ -105,7 +108,7 @@ namespace EveOnlineFittingAssistant_Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Modules.Single(e => e.Id == id);
-                model.Id = id;
+                entity.Name = model.Name;
                 entity.Powergrid = model.Powergrid;
                 entity.Slot = model.Slot;
                 entity.CPU = model.CPU;
@@ -120,7 +123,7 @@ namespace EveOnlineFittingAssistant_Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Modules.Single(e => e.Id == id);
-                model.Id = id;
+                entity.Name = model.Name;
                 entity.Powergrid = model.Powergrid;
                 entity.Slot = model.Slot;
                 entity.CPU = model.CPU;
@@ -137,7 +140,7 @@ namespace EveOnlineFittingAssistant_Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Modules.Single(e => e.Id == id);
-                model.Id = id;
+                entity.Name = model.Name;
                 entity.Powergrid = model.Powergrid;
                 entity.Slot = model.Slot;
                 entity.CPU = model.CPU;

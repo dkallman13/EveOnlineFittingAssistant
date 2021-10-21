@@ -84,11 +84,11 @@ namespace EveOnlineFittingAssistant_Services
                 };
             }
         }
-        public bool UpdateShip(ShipModel model)
+        public bool UpdateShip(int id, ShipModel model)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var ship = ctx.Ships.Single(e => e.Id == model.Id);
+                var ship = ctx.Ships.Single(e => e.Id == id);
 
                 ship.Powergrid = model.Powergrid;
                 ship.CPU = model.CPU;

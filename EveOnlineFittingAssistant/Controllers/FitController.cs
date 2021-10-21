@@ -8,18 +8,18 @@ using System.Web.Mvc;
 
 namespace EveOnlineFittingAssistant.Controllers
 {
-    public class ShipController : Controller
+    public class FitController : Controller
     {
-        private ShipService CreateShipService()
+        private FitService CreateFitService()
         {
-            var shipService = new ShipService();
-            return shipService;
+            var fitservice = new FitService();
+            return fitservice;
         }
-        // GET: Ship
+        // GET: Fit
         public ActionResult Index()
         {
-            var service = CreateShipService();
-            var model = service.GetAllShips();
+            var service = CreateFitService();
+            var model = service.GetAllFits();
             return View(model);
         }
         public ActionResult Create()
@@ -27,13 +27,13 @@ namespace EveOnlineFittingAssistant.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create(ShipModel model)
+        public ActionResult Create(FitModel model)
         {
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
-            var service = CreateShipService();
+            var service = CreateFitService();
             service.Create(model);
             return RedirectToAction("Index");
         }
@@ -42,12 +42,12 @@ namespace EveOnlineFittingAssistant.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Update( ShipModel model)
+        public ActionResult Update(FitModel model)
         {
             int id = int.Parse(RouteData.Values["id"].ToString());
             if (!ModelState.IsValid) return View(model);
-            var service = CreateShipService();
-            if (service.UpdateShip(id, model))
+            var service = CreateFitService();
+            if (service.UpdateFit(id, model))
             {
                 TempData["SaveResult"] = "the module was updated";
                 return RedirectToAction("index");
