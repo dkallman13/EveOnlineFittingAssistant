@@ -10,7 +10,6 @@ namespace EveOnlineFittingAssistant_Models
 {
     public class ModuleModel
     {
-        [Key]
         public int Id { get; set; }
         public SlotType Slot { get; set; }
         public double CPU { get; set; }

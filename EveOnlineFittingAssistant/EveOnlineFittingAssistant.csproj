@@ -179,9 +179,6 @@
     <Content Include="Views\Ship\Index.cshtml" />
     <Content Include="Views\Ship\Create.cshtml" />
     <Content Include="Views\Ship\Update.cshtml" />
-    <Content Include="Views\Fit\Index.cshtml" />
-    <Content Include="Views\Fit\Create.cshtml" />
-    <Content Include="Views\Fit\Update.cshtml" />
     <Content Include="Views\Module\Index.cshtml" />
     <Content Include="Views\Module\CreateWeapon.cshtml" />
     <Content Include="Views\Module\CreateActive.cshtml" />
@@ -191,6 +188,9 @@
     <Content Include="Views\Module\UpdateRepairModule.cshtml" />
     <Content Include="Views\Module\UpdateActiveModule.cshtml" />
     <Content Include="Views\Module\UpdateWeapon.cshtml" />
+    <Content Include="Views\Fit\Index.cshtml" />
+    <Content Include="Views\Fit\Create.cshtml" />
+    <Content Include="Views\Fit\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
