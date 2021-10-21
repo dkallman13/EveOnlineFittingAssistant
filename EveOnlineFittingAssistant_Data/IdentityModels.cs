@@ -64,5 +64,6 @@ namespace EveOnlineFittingAssistant_Data
                 HasKey(iur => iur.UserId);
             }
         }
+
     }
 }

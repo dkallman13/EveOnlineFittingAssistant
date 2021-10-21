@@ -15,9 +15,9 @@ namespace EveOnlineFittingAssistant_Services
             var entity = new Fit()
             {
                 ShipId = fit.ShipId,
-                HighModuleIds = fit.HighModuleIds,
-                MidModuleIds = fit.MidModuleIds,
-                LowModuleIds = fit.LowModuleIds
+                HighModules = fit.HighModules,
+                MidModules = fit.MidModules,
+                LowModules = fit.LowModules
             };
             using (var ctx = new ApplicationDbContext())
             {
@@ -38,11 +38,11 @@ namespace EveOnlineFittingAssistant_Services
                         {
                             Id = e.Id,
                             ShipId = e.ShipId,
-                            HighModuleIds = e.HighModuleIds,
-                            MidModuleIds = e.MidModuleIds,
-                            LowModuleIds = e.LowModuleIds
+                            HighModules = e.HighModules,
+                            MidModules = e.MidModules,
+                            LowModules = e.LowModules
                         });
-                return query.ToList();
+                return query.ToArray();
             }
         }
         public FitModel GetFitById(int id)
@@ -59,9 +59,9 @@ namespace EveOnlineFittingAssistant_Services
                 {
                     Id = fit.Id,
                     ShipId = fit.ShipId,
-                    HighModuleIds = fit.HighModuleIds,
-                    MidModuleIds = fit.MidModuleIds,
-                    LowModuleIds = fit.LowModuleIds
+                    HighModules = fit.HighModules,
+                    MidModules = fit.MidModules,
+                    LowModules = fit.LowModules
                 };
             }
         }
@@ -70,9 +70,9 @@ namespace EveOnlineFittingAssistant_Services
             using (var ctx = new ApplicationDbContext())
             {
                 var Fit = ctx.Fits.Single(e => e.Id == id);
-                Fit.LowModuleIds = model.LowModuleIds;
-                Fit.MidModuleIds = model.MidModuleIds;
-                Fit.HighModuleIds = model.HighModuleIds;
+                Fit.LowModules = model.LowModules;
+                Fit.MidModules = model.MidModules;
+                Fit.HighModules = model.HighModules;
                 Fit.ShipId = model.ShipId;
 
                 return ctx.SaveChanges() == 1;

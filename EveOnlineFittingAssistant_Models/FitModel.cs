@@ -11,8 +11,8 @@ namespace EveOnlineFittingAssistant_Models
     {
         public int Id { get; set; }
         public int ShipId { get; set; }
-        public List<int> HighModuleIds { get; set; }
-        public List<int> MidModuleIds { get; set; }
-        public List<int> LowModuleIds { get; set; }
+        public List<Module> HighModules { get; set; }
+        public List<Module> MidModules { get; set; }
+        public List<Module> LowModules { get; set; }
     }
 }

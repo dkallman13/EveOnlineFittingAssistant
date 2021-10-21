@@ -98,7 +98,7 @@ namespace EveOnlineFittingAssistant.Controllers
         public ActionResult UpdateModule(ModuleModel model) 
         {
             int id = int.Parse(RouteData.Values["id"].ToString());
-            if (!ModelState.IsValid) return View(model);
+            model.Id = id;
             var service = CreateModuleService();
             if (service.UpdateModule(id, model))
             {
@@ -116,7 +116,6 @@ namespace EveOnlineFittingAssistant.Controllers
         public ActionResult UpdateRepairModule(RepairModuleModel model)
         {
             int id = int.Parse(RouteData.Values["id"].ToString());
-            if (!ModelState.IsValid) return View(model);
             var service = CreateModuleService();
             if (service.UpdateRepairModule(id, model))
             {
@@ -134,7 +133,6 @@ namespace EveOnlineFittingAssistant.Controllers
         public ActionResult UpdateActiveModule(ActiveModuleModel model)
         {
             int id = int.Parse(RouteData.Values["id"].ToString());
-            if (!ModelState.IsValid) return View(model);
             var service = CreateModuleService();
             if (service.UpdateActiveModule(id,model))
             {
@@ -152,7 +150,6 @@ namespace EveOnlineFittingAssistant.Controllers
         public ActionResult UpdateWeapon(WeaponModel model)
         {
             int id = int.Parse(RouteData.Values["id"].ToString());
-            if (!ModelState.IsValid) return View(model);
             var service = CreateModuleService();
             if (service.UpdateWeapon(id, model))
             {

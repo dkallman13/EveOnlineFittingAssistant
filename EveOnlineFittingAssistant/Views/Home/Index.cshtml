@@ -2,27 +2,37 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
+<div class="jumbotron" style="background-color: cadetblue;">
     <h1>EVE Fitting Assistant</h1>
     <p class="lead">This website helps you fit ships in eve online.</p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2></h2>
+        <h2>Modules</h2>
         <p>
-            
+            The things you put on your ship, so you can take and deal damage, among other things.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865"></a></p>
+        <div class="btn bg-success" style="box-shadow: 15px 10px 5px teal;">
+            @Html.ActionLink("go look at modules now!", "Index", "Module")
+        </div>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Ships</h2>
+        <p>
+            The ship, where you put your modules.
+        </p>
+        <div class="btn bg-success" style="box-shadow: 15px 10px 5px teal;">
+            @Html.ActionLink("go look at the ships now!", "Index", "Ship")
+        </div>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Fits(WIP)</h2>
+        <p>
+            Fits are a combination of modules and ships.
+        </p>
+        <div class="btn bg-success" style="box-shadow: 15px 10px 5px teal;">
+            @Html.ActionLink("Currently a work in progress but have a look.", "Index", "Fit")
+        </div>
     </div>
 </div>
