@@ -17,6 +17,7 @@ namespace EveOnlineFittingAssistant_Data
         public double Powergrid { get; set; }
         [Required]
         public double CPU { get; set; }
+        public string Name { get; set; }
 
         public double? CycleTime;
         public double? CapacitorUsage;
@@ -32,11 +33,12 @@ namespace EveOnlineFittingAssistant_Data
         public bool IsRepairModule = false;
 
         public Module() { }
-        public Module(SlotType slot, double power, double cpu)
+        public Module(SlotType slot, double power, double cpu, string name)
         {
             Slot = slot;
             Powergrid = power;
             CPU = cpu;
+            Name = name;
         }
 
     }

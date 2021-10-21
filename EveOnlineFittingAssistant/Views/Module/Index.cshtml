@@ -7,10 +7,16 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New Passive Module", "Create")  
+    @Html.ActionLink("Create New Active Module", "CreateActive")  
+    @Html.ActionLink("Create New Repair Module", "CreateRepairModule")  
+    @Html.ActionLink("Create New Weapon", "CreateWeapon")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Slot)
         </th>
@@ -24,22 +30,39 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Slot)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CPU)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Powergrid)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Slot)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CPU)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Powergrid)
+    </td>
+    <td>
+        @if (item is EveOnlineFittingAssistant_Data.Weapon)
+        {
+            @Html.ActionLink("Edit", "UpdateWeapon", new { id = item.ID })
+        }
+        else if (item is EveOnlineFittingAssistant_Data.RepairModule)
+        {
+
+            @Html.ActionLink("Edit", "UpdateRepairModule", new { id = item.ID })
+        }
+        else if (item is EveOnlineFittingAssistant_Data.ActiveModule)
+        {
+            @Html.ActionLink("Edit", "UpdateActiveModule", new { id = item.ID })
+        }
+        else
+        {
+            @Html.ActionLink("Edit", "UpdateModule", new { id = item.ID })
+        }
+    </td>
+</tr>
 }
 
 </table>

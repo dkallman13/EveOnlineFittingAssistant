@@ -14,6 +14,7 @@ namespace EveOnlineFittingAssistant_Models
         public double CPU { get; set; }
         public double Powergrid { get; set; }
         public double CycleTime { get; set; }
+        public string Name { get; set; }
         public double CapacitorUsage { get; set; }
         public WeaponType TypeOfWeapon { get; set; }
         public double DamageMultiplier { get; set; }
